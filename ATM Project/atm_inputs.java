@@ -3,13 +3,14 @@ package project;
 import java.util.Scanner;
 
 public class atm_inputs 
-{
+{      //creating ATM_Inputs Method for all Inputs
 	public void atm_Inputs()
-    {
+    {   // Creating Object for calling all methods 
     	AtmOperationImpl AO = new AtmOperationImpl();
 		int ATM_Number = 12345;
 		int ATM_PIN = 1469;
 		
+		//using Scanner class for User Inputs 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("WELCOME TO ATM :)");
 		
@@ -18,6 +19,8 @@ public class atm_inputs
 		
 		System.out.print("Enter ATM PIN : ");
 		int atm_pin = sc.nextInt();
+		
+		
 		
 		if((ATM_Number==atm_number)&&(ATM_PIN==atm_pin))
 		{
