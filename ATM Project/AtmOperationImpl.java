@@ -4,12 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AtmOperationImpl implements AtmOperationInterF
-{
+{   //creating object of ATM class
     ATM atm = new ATM();
+    
+    //for ministatments
     Map<Double,String>ministatment = new HashMap<>();
+	
 	@Override
 	public void viewBalance() 
-	{
+	{       //View Balance
 		System.out.println("Available Balance is : "
 				+ atm.getBalance());
 	}
@@ -17,7 +20,7 @@ public class AtmOperationImpl implements AtmOperationInterF
 	@Override
 	public void withdrawAmount(double withdrawAmount) 
 	{
-		
+		//Withdraw Amount
 		if(withdrawAmount<atm.getBalance())
 		{
 			ministatment.put(withdrawAmount,"Amount Withdrawn");// for miniStatments
@@ -34,6 +37,7 @@ public class AtmOperationImpl implements AtmOperationInterF
 	@Override
 	public void depositAmount(double depositAmount) 
 	{
+	   //for Deposit Amount
 		ministatment.put(depositAmount,"Amount Deposited..");// for miniStatments
 	    System.out.println(depositAmount+" Deposited Successfullu !!");	
 	    atm.setBalance(atm.getBalance()+depositAmount);
@@ -42,7 +46,7 @@ public class AtmOperationImpl implements AtmOperationInterF
 
 	@Override
 	public void viewMinistatment() 
-	{
+	{   //View Mini Statments
 		for(Map.Entry<Double, String> m:ministatment.entrySet())
 		{
 			System.out.println(m.getKey()+" "+m.getValue());
